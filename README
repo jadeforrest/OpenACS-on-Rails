@@ -21,6 +21,7 @@ models.
   * enforce login
   * receive email
 * finish ability to register
+  - make sure the hash is the same as OpenACS
 * refactor user login to session 
 * make sure observer flushes cache on forum post
 * resources
