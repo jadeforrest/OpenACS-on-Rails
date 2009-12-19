@@ -16,9 +16,9 @@ models.
 == Todo
 
 * forums
+  * enforce login
   * post (make sure you use tree_sortkey)
   * reply
-  * enforce login
   * receive email
 * finish ability to register
   - make sure the hash is the same as OpenACS
