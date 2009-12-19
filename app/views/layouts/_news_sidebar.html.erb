@@ -1,0 +1,10 @@
+<font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">
+  <ul>
+    <% for news in last_five_news %>
+    <li class="newsbox">
+      <a class="newsbox" href="/news/item?item_id=<%= news.item_id %>"><%=h news.title %></a> (<%=h news.publish_date.to_date.to_s(:us) %>) 
+    </li><p />
+    <% end %>
+    <li class="newsbox"><a class="newsbox" href="/news/">more...</a></li>
+  </ul>
+</font>

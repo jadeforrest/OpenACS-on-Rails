@@ -1,0 +1,30 @@
+<%= page_heading "Forums" %>
+
+  <ul class="forum-table">
+
+  <% for message in @messages %>
+  <li class="forum-header">
+    <% if message == @messages.first %>
+    <h2><%=h message.subject %></h2> <br />
+    <% else %>
+    <hr>
+    <% end %>
+
+    <b><%=h full_name(message.first_names, message.last_name) %></b><br />
+
+    <span class="grey"><%=h message.posting_date.to_s(:datetime) %></span>
+    <p />
+  </li>
+  <li class="forum-content">
+    <% if message.format == 'text/plain' %>
+    <%= simple_format(message.content) %>
+    <% elsif message.format == 'text/enhanced' %>
+    <%= simple_format(message.content) %>
+    <% else %>
+    <%= message.content %>
+    <% end %>
+    <p />
+  </li>
+  <% end %>
+</table>
+

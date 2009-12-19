@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title_bar %></title>
+  </head>
+
+  <body bgcolor="#FFFFFF" text="#000000" background="/images/bg.jpg">
+
+    <%= stylesheet_link_tag :all, :cache => true %>
+
+    <!-- Header -->
+
+    <div id="site-header">
+      <div class="system-name">
+        <a href="/">Stop Abuse For Everyone</a>
+      </div>
+      
+      <div class="action-list permanent-navigation">
+        <ul>
+          <% if logged_out? %>
+          <li><a href="<%= login_path %>" title="Login">Login</a></li>
+          <% else %>
+          <span id="oacs-admin-url"><li><a href="@admin_url@" title="#acs-subsite.Site_wide_administration#">Admin</a></li></span>
+          <li><a href="@pvt_home_url@" title="#acs-subsite.Change_pass_email_por#">Home</a></li>
+          <li><a href="<%= logout_path %>" title="Log out">Logout</a></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="user-greeting">
+        <% if logged_in? %>
+          #acs-subsite.Welcome_user#
+        <% else %>
+          &nbsp;
+        <% end %>
+      </div>
+      
+    </div>
+
+    <!--<div id="user-message">
+      <ul>
+          <multiple name="user_messages">
+            <li>@user_messages.message;noquote@</li>
+          </multiple>
+        </ul>
+    </div>-->
+
+    <table border="0" width="100%" cellpadding="0" cellspacing="2">
+      <tr>
+        <td valign="top">
+          
+          <table border="0" cellspacing="2" cellpadding="0" width="100%">
+            <tr>
+              <td class="white">
+                <a class="newsbox" href="/user/login"><b><%=h users_count %></b> website members </a>
+              </td>
+            </tr>
+          </table>
+
+        <td valign="top">
+          <table border="0" cellpadding="1" cellspacing="0" width="100%">
+            <tr> 
+              <td valign="top"><a class="white" href="/info">About SAFE</a>
+              <td>&nbsp;</td>
+              <td valign="top"><a class="white" href="/speakers/">Trainings and Presentations</a>
+              </td>
+              <td>&nbsp;</td>
+              <td valign="top"><a class="white" href="/forums">Forums</a></td>
+              <td>&nbsp;</td>
+              <td valign="top"><a class="white" href="/blog">Blog</a></td>
+              <td>&nbsp;</td>
+              <td valign="top"><a class="white" href="http://www.cafepress.com/safe4all">Store</a></td>
+              <td>&nbsp;</td>
+              <td valign="top"><a class="white" href="/search">Search</a></td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+
+      <td valign="top">
+        <table border="0" cellspacing="2" cellpadding="0" width="100%">
+          <!--
+            <tr>
+              <td><a class="white" href="/intl/">SAFE International</a></td>
+            </tr>
+          -->
+
+          <tr>
+            <td><a class="white" href="/help/">Finding Help Guide</a></td>
+          </tr>
+
+          <tr>
+            <td class="white">
+              <ul>
+                <li class="newsbox"><a class="newsbox" href="/resource-list"><%=h RlResource.resources_count %> resources</a></li>
+                <!--<if @admin_url@ not nil><li class="newsbox"><a class="newsbox" href="/resource-list">@resource_count_pending@ pending</a></li></if>-->
+                
+                <li class="newsbox"><a class="newsbox" href="/brochure">Brochures for abused straight men, gay men, and lesbians</a></li>
+                
+                <li class="newsbox"><a class="newsbox" href="/resources/">Info on abuse (essays, articles, books)</a>
+                  
+              </ul>
+            </td> 
+          </tr>
+
+          <tr>
+            <td><a class="white" href="/difference">How you can help</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="white">
+              <ul>
+                <li class="newsbox"><a class="newsbox" href="/difference/media-corps">Media Corps</a></li>
+                <li class="newsbox"><a class="newsbox" href="/join">Join SAFE</a></li>
+                <li class="newsbox"><a class="newsbox" href="/difference">Volunteer</a></li>
+                <li class="newsbox"><a class="newsbox" href="/difference">16 ways to help</a></li>
+                
+                <li class="newsbox">
+                  <a href="/donate" class="newsbox">Your donation makes this work possible. Donating is easy!</a></li>
+                
+              </ul>
+            </td>
+          </tr>
+
+          <tr> 
+            <td> 
+              <table width="100%" border="0" bordercolor="#FFFFFF" cellpadding="1" cellspacing="0" height="241">
+                <tr> 
+                  <td class="white">
+                    <a class="white" href="/news/">SAFE News</a>
+                  </td>
+                </tr>
+
+                <tr> 
+                  <td>
+                    <%= render :partial => "/layouts/news_sidebar" %>
+                  </td>
+                </tr>
+              </table>
+              
+            </td>
+          </tr>
+          
+          <tr>
+            <td><a class="white" href="/forums/">Forums</a></td>
+          </tr>
+          
+          <tr>
+            <td class="white">
+              <%= render :partial => "/layouts/forum_sidebar" %>
+            </td>
+          </tr>
+          
+        </table>
+        
+      </td>
+      
+      <td valign=top width="85%" bgcolor="#FFFFFF">
+        <div id="context-bar">
+          <div id="breadcrumbs">
+            <ul>
+              <li><a href="/">home</a></li>
+              <%= bread_crumbs %>
+            </ul>
+            
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        
+        <div><a href="/"><img align="right" border="0" hspace="5" vspace="20" src="/images/safe-smaller.gif" /></a><br /><br /><br /></div>
+        
+        <div id="page-body">
+          <h1 class="page-title"><%= page_title %></h1>
+          
+          <%= yield %>
+          
+          <div style="clear: both;"></div>
+        </div>
+      </td>
+    </table>  
+    
+    
+    <hr />
+    <div class="whitebottom">&copy;<%= DateTime.now.year %> Stop Abuse For Everyone <BR>
+      &quot;Our name is our mission&quot;</div>
+    
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct = "UA-462860-1";
+  urchinTracker();
+</script>
+
+</body>
+</html>

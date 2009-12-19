@@ -1,0 +1,18 @@
+<%= page_heading "Forums" %>
+
+<table> 
+  <tr valign="top">
+    <th>Forum Name</th>
+    <th>Description</th>
+  </tr>
+  <% for forum in @forums %>
+  <tr valign="top">
+    <td>
+      <%= link_to h(forum.name), messages_path(:forum_id => forum.forum_id) %>
+    </td>
+    <td>
+      <%= forum.charter %>
+    </td>
+  </tr>
+  <% end %>
+</table>

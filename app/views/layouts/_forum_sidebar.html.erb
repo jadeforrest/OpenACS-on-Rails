@@ -1,0 +1,10 @@
+Recent threads:
+  <ul>
+    <% for message in last_seven_messages %>
+    <li class="newsbox"> 
+      <a class="newsbox" href="<%= message_path(:id => message.parent_id, :forum_id => message.forum_id) %>"><%= message.subject %></a></li><p /> 
+    <% end %>
+    
+    <li class="newsbox"><a class="newsbox" href=/forums>more...</a>
+  </ul>
+

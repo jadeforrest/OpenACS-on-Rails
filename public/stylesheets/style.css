@@ -1,0 +1,170 @@
+A:link.white { 
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 8pt;
+    border-width: thin;
+    border-color: #FFFFFF;
+    border-style: solid;
+    white-space: nowrap;
+    padding: 2pt 4pt;
+    background-color: #bb8800;
+}
+
+A:active.white { 
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 8pt;
+    border-width: thin;
+    border-style: solid;
+    border-color: #FFFFFF;
+    white-space: nowrap;
+    padding: 2pt 4pt;
+    background-color: #FFCC99;
+}
+
+A:visited.white { 
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 8pt;
+    border-width: thin;
+    border-style: solid;
+    border-color: #FFFFFF;
+    white-space: nowrap;
+    padding: 2pt 4pt;
+    background-color: #bb8800;
+}
+
+A:hover.white { 
+    display: block;
+    color: white;
+    text-decoration: underline;
+    font-size: 8pt;
+    border-width: thin;
+    border-style: solid;
+    border-color: #FFFFFF;
+    white-space: nowrap;
+    padding: 2pt 4pt;
+    background-color: #DDCC00;
+}
+
+:link.newsbox { 
+    color: white;
+    text-decoration: none;
+}
+
+:active.newsbox { 
+    color: white;
+    text-decoration: none;
+}
+
+:visited.newsbox { 
+    color: white;
+    text-decoration: none;
+}
+
+:hover.newsbox { 
+    color: white;
+    text-decoration: underline;
+}
+
+ul.newsbox,li.newsbox {
+    font-size: 8pt;
+    margin-left: -1.5em;
+    padding-left: -1.5em;
+}
+
+TD.white {
+    width: 100px;
+    font-size: 9pt;
+    color: white;
+}
+
+TD.whitesmall {
+    width: 100px;
+    font-size: 8pt;
+    color: white;
+    margin-left: 2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 2em;
+}
+
+TD.donatebox {
+    color: white;
+    font-size: 9pt;
+    font-family: "Verdana, Arial, Helvetica, sans-serif" 
+}
+
+H3 {
+    margin-top:9px;
+}
+
+blockquote {
+    border: #dbf dashed 1px;
+    padding: 1em;
+}
+
+#heading-color {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-right: 20px;
+    background-color: #dd9988;
+    width: 99%;
+}
+
+#heading-color2 {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-right: 20px;
+    background-color: #ddddff;
+    width: 99%;
+}
+
+#heading-color3 {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-right: 20px;
+    background-color: #313063;
+    color: #FFFFFF;
+    width: 99%;
+}
+
+td.white {
+    color: #FFFFFF;
+}
+
+ul.forum-table {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+li.forum-header {
+    list-style-type: none;
+}
+
+li.forum-content {
+    list-style-type: none;
+}
+
+div.whitebottom {
+    color: #FFFFFF;
+}
+
+.grey {
+    color: #444444;
+}

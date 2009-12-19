@@ -1,0 +1,36 @@
+== Welcome to OpenACS on Rails
+
+Welcome to OpenACS on Rails. This is a personal project of mine to
+move a couple of websites to Rails. I am keeping the data model until
+the site is in a state which is stable enough for deployment. Then I
+make no promises.
+    
+Note that this fork is based off of OpenACS 5.2.3 on Postgres.
+However, I think we can probably do meaningful collaboration even
+based on different versions of OpenACS. Fortunately, git does make
+forking much less painful that it has been in the past.
+    
+I used the Magic Model Generator to generate a first version of the
+models.
+
+== Todo
+
+* forums
+  * post (make sure you use tree_sortkey)
+  * reply
+  * enforce login
+  * receive email
+* finish ability to register
+* refactor user login to session 
+* make sure observer flushes cache on forum post
+* resources
+* blog
+* news
+* cache queries on application layout
+* honor legacy links
+
+*** launch
+
+* forums: keep track of which threads you have seen
+* remove cruft
+

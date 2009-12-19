@@ -1,0 +1,6 @@
+class CategoryTranslation < ActiveRecord::Base
+  validates_presence_of :locale
+  validates_length_of :locale, :allow_nil => false, :maximum => 5
+  validates_length_of :name, :allow_nil => true, :maximum => 200
+  validates_length_of :description, :allow_nil => true, :maximum => 4000
+end
