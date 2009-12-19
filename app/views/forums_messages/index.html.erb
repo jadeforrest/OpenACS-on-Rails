@@ -5,21 +5,33 @@
   <%= link_to 'Back', messages_path %> 
 </p>
 
-<table> 
+<table class="list-table" cellpadding="3" cellspacing="0" summary="Messages"> 
+  <thead>
+    <tr valign="top">
+      <th class="list-table">Message</th>
+      <th class="list-table">Replies</th>
+      <th class="list-table">Last Reply</th>
+    </tr>
+  </thead>
+
   <% for message in @messages %>
   <tr valign="top" class="<%= cycle('list-odd','list-even') %>">
-    <td>
-      <%= link_to h(message.subject), message_path(message.message_id) %> 
+    <td class="list-table">
+      <%= link_to h(message.subject), message_path(message.message_id) %> <br />
       <%=h full_name(message.first_names, message.last_name) %> 
       <br /> 
-      
+    </td>
+    <td class="list-table">
       <span class="list-label">
-        <%=h message.reply_count.to_word %> 
-        <% if message.reply_count == 1 %>reply<% else %>replies<% end %>
-        <% if message.reply_count > 0 %>
-        (most recent was <%=h message.last_child_post.to_s(:datetime) %>)
-        <% end %>
+        <%= pluralize(message.reply_count,'reply') %>
       </span>
+    </td>
+    <td class="list-table">
+      <% if message.reply_count > 0 %>
+      <span class="list-label">
+        <%=h message.last_child_post.to_s(:datetime) %>
+      </span>
+      <% end %>
     </td>
   </tr>
   <% end %>
@@ -27,3 +39,5 @@
 </table>
 
 <%= will_paginate @messages %>
+
+<p />

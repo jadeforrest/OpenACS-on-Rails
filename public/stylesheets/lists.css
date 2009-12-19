@@ -139,3 +139,13 @@ td.list-list-pane {
   vertical-align: middle;
   padding-left: 10px;
 }
+
+th.list-table {
+    border-bottom: 1px solid #bb8800;
+    padding: 8px 16px;
+}
+
+td.list-table {
+    border-bottom: 1px solid #bb8800;
+    padding: 16px 16px;
+}

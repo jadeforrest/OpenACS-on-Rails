@@ -1,18 +1,24 @@
 <%= page_heading "Forums" %>
 
-<table> 
-  <tr valign="top">
-    <th>Forum Name</th>
-    <th>Description</th>
-  </tr>
-  <% for forum in @forums %>
-  <tr valign="top">
-    <td>
-      <%= link_to h(forum.name), messages_path(:forum_id => forum.forum_id) %>
-    </td>
-    <td>
-      <%= forum.charter %>
-    </td>
-  </tr>
-  <% end %>
+<table class="list-table" cellpadding="3" cellspacing="0" summary="Forums"> 
+  <thead>
+    <tr valign="top">
+      <th class="list-table">Forum Name</th>
+      <th class="list-table">Description</th>
+      <th class="list-table">Threads</th>
+      <th class="list-table">Last Post</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for forum in @forums %>
+    <tr valign="top" class="<%= cycle('odd','even') %>">
+      <td class="list-table">
+        <%= link_to h(forum.name), messages_path(:forum_id => forum.forum_id) %>
+      </td>
+      <td class="list-table">
+        <%= forum.charter %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
