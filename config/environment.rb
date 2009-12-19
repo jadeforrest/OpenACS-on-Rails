@@ -20,7 +20,13 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'newrelic_rpm'
+
+
+  # You should set up new relic RPM or comment this out. I have not
+  # included the newrelic configuration file in this repository,
+  # because it would include my own private key
+
+  # config.gem 'newrelic_rpm'
 
   config.gem 'will_paginate', 
     :version => '~> 2.3.11', 
