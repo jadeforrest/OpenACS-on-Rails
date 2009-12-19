@@ -6,7 +6,7 @@
       <th class="list-table">Forum Name</th>
       <th class="list-table">Description</th>
       <th class="list-table">Threads</th>
-      <th class="list-table">Last Post</th>
+      <th class="list-table" width="100">Last Post</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +17,12 @@
       </td>
       <td class="list-table">
         <%= forum.charter %>
+      </td>
+      <td class="list-table">
+        <%= forum.thread_count %>
+      </td>
+      <td class="list-table">
+        <%= forum.last_post.to_s(:us) %>
       </td>
     </tr>
     <% end %>
