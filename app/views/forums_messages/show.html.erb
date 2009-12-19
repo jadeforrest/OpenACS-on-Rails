@@ -1,5 +1,7 @@
-  <ul class="forum-table">
+<%= link_to 'Back', messages_path(:forum_id => params['forum_id']) %> <p />
 
+<ul class="forum-table">
+  
   <% for message in @messages %>
   <li class="forum-header">
     <% if message == @messages.first %>
@@ -24,5 +26,5 @@
     <p />
   </li>
   <% end %>
-</table>
+</ul>
 
