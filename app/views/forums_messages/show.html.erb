@@ -1,11 +1,9 @@
-<%= page_heading "Forums" %>
-
   <ul class="forum-table">
 
   <% for message in @messages %>
   <li class="forum-header">
     <% if message == @messages.first %>
-    <h2><%=h message.subject %></h2> <br />
+    <%= title message.subject %>
     <% else %>
     <hr>
     <% end %>

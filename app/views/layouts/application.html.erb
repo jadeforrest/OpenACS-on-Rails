@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title_bar %></title>
+    <title><%= yield(:title) || 'Stop Abuse For Everyone' %></title>
   </head>
 
   <body bgcolor="#FFFFFF" text="#000000" background="/images/bg.jpg">
@@ -172,7 +172,7 @@
         <div><a href="/"><img align="right" border="0" hspace="5" vspace="20" src="/images/safe-smaller.gif" /></a><br /><br /><br /></div>
         
         <div id="page-body">
-          <h1 class="page-title"><%= page_title %></h1>
+          <h1 class="page-title"><%= yield(:h1) || yield(:title) %></h1>
           
           <%= yield %>
           

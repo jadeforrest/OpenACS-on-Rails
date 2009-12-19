@@ -1,12 +1,12 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  def title_bar
-    (@content_for_title + " &mdash; " if @content_for_title).to_s + 'Stop Abuse For Everyone'
+  def title(page_title)
+    content_for(:title) { page_title }
   end
 
-  def page_title
-    (@content_for_title if @content_for_title).to_s
+  def h1(page_h1)
+    content_for(:h1) { page_h1 }
   end
 
   # todo: move to Users model?
