@@ -42,6 +42,15 @@ class ForumsMessagesController < ApplicationController
     @message = ForumsMessage.new(params[:message])
     @message.posting_date = DateTime.now()
 
+    #        set var_list [list \
+    #             [list forum_id $forum_id] \
+    #             [list message_id $message_id] \
+    #             [list parent_id $parent_id] \
+    #             [list subject $subject] \
+    #             [list content $content] \
+    #             [list format $format] \
+    #             [list user_id $user_id]]
+
     respond_to do |format|
       if @message.save
         flash[:notice] = 'Message was created'
