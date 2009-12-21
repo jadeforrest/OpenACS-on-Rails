@@ -1,4 +1,3 @@
-require "lib/integer_to_word.rb"
 require "active_support"
 
 class ForumsMessagesController < ApplicationController

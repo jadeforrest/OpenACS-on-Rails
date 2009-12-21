@@ -9,10 +9,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :forums, :controller => 'forums_forums'
   map.resources :messages, :controller => 'forums_messages'
-  map.login  '/user/login', :controller => 'user', :action => 'login'
-  map.logout  '/user/logout', :controller => 'user', :action => 'logout'
-  map.logout  '/user/private', :controller => 'user', :action => 'private'
-  map.authenticate  '/user/authenticate', :controller => 'user', :action => 'authenticate'
+  map.resources :session, :controller => 'session'
+  map.login  '/session/new', :controller => 'session', :action => 'new'
+  map.logout  '/sesson/delete', :controller => 'session', :action => 'delete'
   map.resources :user, :controller => 'user'
 
   #map.resources :forums_forums, :as => 'forums', do |forums|

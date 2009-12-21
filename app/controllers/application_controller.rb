@@ -6,10 +6,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   before_filter :authorize
+  helper_method :logged_in?, :logged_out?
+
+  def logged_in?
+    !logged_out?
+  end
+
+  def logged_out?
+    session[:user_id].nil?
+  end
 
   protected
 
   # override this in any controller that requires authentication
+  # for example:     ["new"].include?(action_name)
   def require_login?
     false
   end
@@ -20,11 +30,10 @@ class ApplicationController < ActionController::Base
     if require_login? && session[:user_id].nil?
       flash[:notice] = "Please login to access that page"
       session[:return_url] = request.request_uri
-      redirect_to :controller => 'user', :action => 'login'
+      redirect_to :controller => 'session', :action => 'new'
       return false
     end
   end
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
 end
