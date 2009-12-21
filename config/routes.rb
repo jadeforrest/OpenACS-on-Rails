@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :messages, :controller => 'forums_messages'
   map.login  '/user/login', :controller => 'user', :action => 'login'
   map.logout  '/user/logout', :controller => 'user', :action => 'logout'
+  map.logout  '/user/private', :controller => 'user', :action => 'private'
   map.authenticate  '/user/authenticate', :controller => 'user', :action => 'authenticate'
   map.resources :user, :controller => 'user'
 

@@ -168,8 +168,13 @@
           </div>
           <div style="clear: both;"></div>
         </div>
-        
-        <div><a href="/"><img align="right" border="0" hspace="5" vspace="20" src="/images/safe-smaller.gif" /></a><br /><br /><br /></div>
+
+        <span><a href="/"><img align="right" border="0" hspace="5" vspace="20" src="/images/safe-smaller.gif" /></a><br /><br /><br /></span>
+          <% if flash[:notice] %>
+          <span class="boxed-user-message">
+            <%= flash[:notice] %>
+          </span>
+          <% end %>
         
         <div id="page-body">
           <h1 class="page-title"><%= yield(:h1) || yield(:title) %></h1>
