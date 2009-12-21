@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
     person.full_name
   end
 
-  # better refactor to use rest based
+  # todo: better refactor to use rest based
   # http://media.railscasts.com/videos/021_super_simple_authentication.mov
   def self.authenticate(username, password)
     find_by_username_and_password(username, User.md5_upper(password))

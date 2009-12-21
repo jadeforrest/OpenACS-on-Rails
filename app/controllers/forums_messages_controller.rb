@@ -2,6 +2,11 @@ require "lib/integer_to_word.rb"
 require "active_support"
 
 class ForumsMessagesController < ApplicationController
+
+  def require_login?
+    ["new"].include?(action_name)
+  end
+
   def index
     maybe_redirect 
     @messages = ForumsMessage.paginate(:per_page => 30, \
