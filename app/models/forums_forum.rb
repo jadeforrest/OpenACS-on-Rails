@@ -1,5 +1,6 @@
 class ForumsForum < ActiveRecord::Base
   set_primary_key :forum_id
+  set_sequence_name 't_acs_object_id_seq'
 
   has_many :forums_messages, :class_name => "ForumsMessage"
 
