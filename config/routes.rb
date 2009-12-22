@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :messages, :controller => 'forums_messages'
   map.resources :session, :controller => 'session'
   map.login  '/session/new', :controller => 'session', :action => 'new'
-  map.logout  '/sesson/delete', :controller => 'session', :action => 'delete'
+  map.logout  '/sesson/destroy', :controller => 'session', :action => 'destroy'
   map.resources :user, :controller => 'user'
 
   #map.resources :forums_forums, :as => 'forums', do |forums|

@@ -23,7 +23,8 @@ class SessionController < ApplicationController
     end
   end
 
-  def delete
+  # update view
+  def destroy
     if session[:user_id]
       reset_session
     end
