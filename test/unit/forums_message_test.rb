@@ -17,6 +17,17 @@ class ForumsMessageTest < ActiveSupport::TestCase
                             :presentation_type => 'abc', \
                             :posting_policy => 'abc', \
                             :enabled_p => 'f')
+
+
+
+    #select ${package_name}__new([plpgsql_utility::generate_attribute_paramete
+r_call \
+    #            -prepend ":" \
+    #            ${package_name}__new \
+    #            $pieces])
+
+
+
     forum.save
 
 
