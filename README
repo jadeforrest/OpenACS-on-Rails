@@ -15,6 +15,24 @@ models.
 
 == Todo
 
+* Plugin to support OpenACS object model
+
+This looks surprisingly easy. Just a lot of finangling to get the
+interface to work nicely.
+
+I probably will not add in support for the permissions data model,
+although it wouldn't be that hard.
+
+This plugin will be the most important code to fork off for any other
+migration efforts. I envision putting something in the model akin to
+"acts_as_openacs", with the list of fields to save to match up with
+the appropriate pl/sql functions, and then save, update, etc.. works
+pretty automatically.
+
+One element that may be harder is code that uses the Content
+Repository. That will need to be duplicated as well. Probably it will
+be something like "acts_as_versioned_openacs" or something like that.
+
 * forums
   * enforce login
   * post (make sure you use tree_sortkey)
